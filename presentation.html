@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TOTC LMS — Project Presentation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- Hint -->
+  <div id="hint">← → or click dots</div>
+
+  <!-- Slide label -->
+  <div class="slide-label" id="slideLabel">Cover</div>
+
+  <!-- Navigation -->
+  <div id="nav">
+    <button class="nav-btn" onclick="prev()"><i class="fas fa-chevron-left"></i></button>
+    <div class="dot-nav" id="dots"></div>
+    <span id="slideCounter">1 / 8</span>
+    <button class="nav-btn" onclick="next()"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════
+     SLIDES
+════════════════════════════════════════════════════════════ -->
+  <div id="slides">
+
+    <!-- ── SLIDE 0: COVER ── -->
+    <div class="slide s-cover active" data-label="Cover">
+      <div class="orb" style="width:400px;height:400px;background:rgba(91,114,238,.12);top:-10%;right:-5%"></div>
+      <div class="orb" style="width:300px;height:300px;background:rgba(0,203,184,.08);bottom:-5%;left:5%"></div>
+      <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;padding:3rem">
+        <div class="cover-badge anim"><i class="fas fa-graduation-cap"></i> Graduation Project · DEPI 2025</div>
+        <div class="cover-title anim">TOTC <span>Learning</span><br>Management System</div>
+        <div class="cover-sub anim">A full-featured, AI-powered LMS built with ASP.NET Core MVC</div>
+        <div class="cover-stats anim">
+          <div class="text-center">
+            <div class="cstat-num">5</div>
+            <div class="cstat-lbl">Roles</div>
+          </div>
+          <div class="text-center">
+            <div class="cstat-num">30+</div>
+            <div class="cstat-lbl">Features</div>
+          </div>
+          <div class="text-center">
+            <div class="cstat-num">5</div>
+            <div class="cstat-lbl">AI Tools</div>
+          </div>
+          <div class="text-center">
+            <div class="cstat-num">.NET 10</div>
+            <div class="cstat-lbl">Platform</div>
+          </div>
+        </div>
+        <div class="cover-team anim" style="margin-top:2rem">
+          <div class="team-pill"><i class="fas fa-user c-sec me-1"></i> Member 1 — AI & Backend</div>
+          <div class="team-pill"><i class="fas fa-user c-pur me-1"></i> Member 2 — UI/UX</div>
+          <div class="team-pill"><i class="fas fa-user c-blu me-1"></i> Member 3 — Architecture</div>
+          <div class="team-pill"><i class="fas fa-user c-ora me-1"></i> Member 4 — LMS Features</div>
+          <div class="team-pill"><i class="fas fa-user c-pink me-1"></i> Member 5 — AI Features</div>
+          <div class="team-pill"><i class="fas fa-laptop c-yel me-1"></i> Nawal — Live Demo</div>
+        </div>
+        <div style="margin-top:2.5rem;display:flex;gap:1rem;align-items:center;opacity:.4;font-size:.8rem" class="anim">
+          <span><i class="fas fa-arrow-right me-1"></i>Use arrow keys or click to navigate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 1: INTRODUCTION ── -->
+    <div class="slide bg-s1" data-label="1 · Introduction">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num">01</div>
+          <div>
+            <div class="slide-title">Introduction & Project Idea</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">Problem · Goals · Users</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 1</span></div>
+        </div>
+
+        <div class="g3-1" style="flex:1;align-items:start">
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <div class="card anim" style="border-left:3px solid var(--pink)">
+              <div class="card-icon bg-pink"><i class="fas fa-exclamation-triangle c-pink"></i></div>
+              <div class="card-title">The Problem</div>
+              <div class="card-text">Schools lacked a unified platform connecting students, instructors, parents, and
+                admins. Progress was tracked manually, communication was fragmented, and parents had no visibility.
+              </div>
+            </div>
+            <div class="card anim" style="border-left:3px solid var(--secondary)">
+              <div class="card-icon bg-sec"><i class="fas fa-lightbulb c-sec"></i></div>
+              <div class="card-title">Our Solution — TOTC LMS</div>
+              <div class="card-text">A full-featured LMS with 5 role-based dashboards, AI-powered tools, automated
+                reporting, and real-time notifications — all in one platform.</div>
+            </div>
+            <div class="card anim" style="border-left:3px solid var(--purple)">
+              <div class="card-icon bg-pur"><i class="fas fa-bullseye c-pur"></i></div>
+              <div class="card-title">System Goals</div>
+              <div class="card-text">Streamline course management · Enable AI-assisted learning · Keep parents informed
+                · Automate weekly reports · Provide role-specific dashboards</div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.8rem">
+            <div
+              style="font-size:.82rem;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:.2rem"
+              class="anim">System Roles</div>
+            <div class="card anim" style="display:flex;align-items:center;gap:1rem;">
+              <div
+                style="width:42px;height:42px;border-radius:12px;background:rgba(225,52,104,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-crown c-pink"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:.85rem">SuperAdmin</div>
+                <div class="card-text" style="margin-top:2px">Full system control · User management · Configuration
+                </div>
+              </div>
+            </div>
+            <div class="card anim" style="display:flex;align-items:center;gap:1rem;">
+              <div
+                style="width:42px;height:42px;border-radius:12px;background:rgba(244,140,6,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-user-shield c-ora"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:.85rem">Admin</div>
+                <div class="card-text" style="margin-top:2px">Monitor activity · Manage users · Announce · Support
+                  tickets</div>
+              </div>
+            </div>
+            <div class="card anim" style="display:flex;align-items:center;gap:1rem;">
+              <div
+                style="width:42px;height:42px;border-radius:12px;background:rgba(91,114,238,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-chalkboard-teacher c-pur"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:.85rem">Instructor</div>
+                <div class="card-text" style="margin-top:2px">Create exams · Grade assignments · AI exam generator</div>
+              </div>
+            </div>
+            <div class="card anim" style="display:flex;align-items:center;gap:1rem;">
+              <div
+                style="width:42px;height:42px;border-radius:12px;background:rgba(0,203,184,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-user-graduate c-sec"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:.85rem">Student</div>
+                <div class="card-text" style="margin-top:2px">Take exams · Submit assignments · AI chatbot · Study
+                  planner</div>
+              </div>
+            </div>
+            <div class="card anim" style="display:flex;align-items:center;gap:1rem;">
+              <div
+                style="width:42px;height:42px;border-radius:12px;background:rgba(41,185,231,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i class="fas fa-user-friends c-blu"></i>
+              </div>
+              <div>
+                <div style="font-weight:700;font-size:.85rem">Parent</div>
+                <div class="card-text" style="margin-top:2px">Monitor children · Weekly AI reports · View grades</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 2: FRONTEND & UI ── -->
+    <div class="slide bg-s2" data-label="2 · Frontend & UI">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num">02</div>
+          <div>
+            <div class="slide-title">Frontend & UI/UX</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">Design System · Responsive · Animations</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 2</span></div>
+        </div>
+        <div class="g3" style="flex:1;align-content:start">
+          <!-- Color palette -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">🎨 Color
+              Palette</div>
+            <div style="display:flex;flex-direction:column;gap:.4rem">
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <div style="width:28px;height:28px;border-radius:7px;background:#2F327D"></div><span
+                  style="font-size:.72rem">#2F327D — Primary</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <div style="width:28px;height:28px;border-radius:7px;background:#00CBB8"></div><span
+                  style="font-size:.72rem">#00CBB8 — Secondary</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <div style="width:28px;height:28px;border-radius:7px;background:#5B72EE"></div><span
+                  style="font-size:.72rem">#5B72EE — Purple</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <div style="width:28px;height:28px;border-radius:7px;background:#E13468"></div><span
+                  style="font-size:.72rem">#E13468 — Pink/Alert</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:.6rem">
+                <div style="width:28px;height:28px;border-radius:7px;background:#F48C06"></div><span
+                  style="font-size:.72rem">#F48C06 — Orange</span>
+              </div>
+            </div>
+          </div>
+          <!-- Typography & Stack -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">🔤 Typography &
+              Stack</div>
+            <div style="font-size:1.3rem;font-weight:800;margin-bottom:.5rem">Poppins</div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-bottom:1rem">300 · 400 · 600 · 700 · 800
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+              <span
+                style="background:rgba(91,114,238,.15);border:1px solid rgba(91,114,238,.3);border-radius:6px;padding:2px 8px;font-size:.68rem">Bootstrap
+                5.3</span>
+              <span
+                style="background:rgba(0,203,184,.1);border:1px solid rgba(0,203,184,.2);border-radius:6px;padding:2px 8px;font-size:.68rem">Font
+                Awesome 6</span>
+              <span
+                style="background:rgba(244,140,6,.1);border:1px solid rgba(244,140,6,.2);border-radius:6px;padding:2px 8px;font-size:.68rem">Chart.js</span>
+              <span
+                style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:2px 8px;font-size:.68rem">Razor
+                Views</span>
+              <span
+                style="background:rgba(41,185,231,.1);border:1px solid rgba(41,185,231,.2);border-radius:6px;padding:2px 8px;font-size:.68rem">CSS
+                Animations</span>
+              <span
+                style="background:rgba(225,52,104,.1);border:1px solid rgba(225,52,104,.2);border-radius:6px;padding:2px 8px;font-size:.68fn">IntersectionObserver</span>
+            </div>
+          </div>
+          <!-- Pages -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">📄 Public Pages
+            </div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                <div class="tl-title" style="font-size:.78rem">Home Page</div>
+                <div class="tl-text">Hero · Stats · Features · FAQ · Contact form</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--purple);border-color:var(--purple)"></div>
+                <div class="tl-title" style="font-size:.78rem">About Page</div>
+                <div class="tl-text">Mission · Vision · Timeline · Services</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--blue);border-color:var(--blue)"></div>
+                <div class="tl-title" style="font-size:.78rem">Login / Register</div>
+                <div class="tl-text">Forgot password · Role redirect</div>
+              </div>
+              <div class="tl-item" style="margin:0">
+                <div class="tl-dot" style="background:var(--orange);border-color:var(--orange)"></div>
+                <div class="tl-title" style="font-size:.78rem">5 Dashboards</div>
+                <div class="tl-text">Per-role UI with sidebar + notifications</div>
+              </div>
+            </div>
+          </div>
+          <!-- Dashboard mockup -->
+          <div class="card anim" style="grid-column:1/3">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">🖥️ Dashboard
+              Components</div>
+            <div style="display:flex;gap:.6rem;flex-wrap:wrap">
+              <div class="dash-mock" style="width:220px">
+                <div class="dash-mock-bar">
+                  <div class="dash-dot" style="background:#E13468"></div>
+                  <div class="dash-dot" style="background:#F48C06"></div>
+                  <div class="dash-dot" style="background:#00CBB8"></div><span style="margin-left:.4rem">Student
+                    Dashboard</span>
+                </div>
+                <div class="dash-body">
+                  <div class="dash-sidebar">
+                    <div class="dash-sitem act">🏠 Home</div>
+                    <div class="dash-sitem">📚 Courses</div>
+                    <div class="dash-sitem">📝 Exams</div>
+                    <div class="dash-sitem">📋 Tasks</div>
+                    <div class="dash-sitem">🤖 AI</div>
+                  </div>
+                  <div style="display:flex;flex-direction:column;gap:.4rem">
+                    <div
+                      style="background:linear-gradient(135deg,rgba(0,203,184,.2),rgba(41,185,231,.1));border-radius:7px;padding:.4rem .5rem">
+                      <div style="font-size:.58rem;color:rgba(255,255,255,.5)">Overall Score</div>
+                      <div style="font-size:.9rem;font-weight:800;color:var(--secondary)">78%</div>
+                      <div class="prog-bar-wrap" style="margin-top:.3rem">
+                        <div class="prog-bar" style="width:78%;background:var(--secondary)"></div>
+                      </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.3rem">
+                      <div style="background:rgba(91,114,238,.12);border-radius:6px;padding:.3rem;text-align:center">
+                        <div style="font-size:.75rem;font-weight:700">3</div>
+                        <div style="font-size:.52rem;color:rgba(255,255,255,.4)">Courses</div>
+                      </div>
+                      <div style="background:rgba(244,140,6,.1);border-radius:6px;padding:.3rem;text-align:center">
+                        <div style="font-size:.75rem;font-weight:700">2</div>
+                        <div style="font-size:.52rem;color:rgba(255,255,255,.4)">Due Soon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:.5rem;justify-content:center">
+                <div style="font-size:.75rem;font-weight:600;margin-bottom:.3rem">Key UI Features</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Notification Bell</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> RTL Arabic Support</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Scroll Animations</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Mobile Responsive</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Counter Animations</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Bootstrap Modals</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Progress Bars</div>
+                  <div style="display:flex;align-items:center;gap:.4rem;font-size:.7rem"><i
+                      class="fas fa-check-circle c-sec"></i> Role-aware Layouts</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Responsive -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">📱 Responsive
+              Design</div>
+            <div style="display:flex;gap:.8rem;align-items:flex-end">
+              <div style="text-align:center">
+                <div
+                  style="width:35px;height:60px;border:1.5px solid rgba(255,255,255,.2);border-radius:6px;margin:0 auto .3rem;background:rgba(255,255,255,.04)">
+                </div>
+                <div style="font-size:.65rem;color:rgba(255,255,255,.4)">Mobile</div>
+              </div>
+              <div style="text-align:center">
+                <div
+                  style="width:55px;height:42px;border:1.5px solid rgba(0,203,184,.4);border-radius:5px;margin:0 auto .3rem;background:rgba(0,203,184,.06)">
+                </div>
+                <div style="font-size:.65rem;color:var(--secondary)">Tablet ✓</div>
+              </div>
+              <div style="text-align:center">
+                <div
+                  style="width:80px;height:30px;border:1.5px solid rgba(91,114,238,.4);border-radius:4px;margin:0 auto .3rem;background:rgba(91,114,238,.06)">
+                </div>
+                <div style="font-size:.65rem;color:var(--purple)">Desktop ✓</div>
+              </div>
+              <div style="text-align:center">
+                <div
+                  style="width:95px;height:25px;border:1.5px solid rgba(244,140,6,.4);border-radius:4px;margin:0 auto .3rem;background:rgba(244,140,6,.06)">
+                </div>
+                <div style="font-size:.65rem;color:var(--orange)">Projector ✓</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 3: ARCHITECTURE ── -->
+    <div class="slide bg-s3" data-label="3 · Architecture">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num">03</div>
+          <div>
+            <div class="slide-title">Backend & MVC Architecture</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">ASP.NET Core · Areas · Repositories · Auth</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 3</span></div>
+        </div>
+        <div class="g3" style="flex:1;align-content:start;gap:.8rem">
+          <!-- Tech stack -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">⚙️ Technology
+              Stack</div>
+            <div style="display:flex;flex-direction:column;gap:.45rem">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-code c-pur me-1"></i> ASP.NET Core MVC</span><span
+                  style="color:var(--secondary);font-weight:700">.NET 10</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-database c-blu me-1"></i> SQL Server + EF Core</span><span
+                  style="color:var(--secondary);font-weight:700">Code First</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-leaf c-sec me-1"></i> MongoDB Atlas</span><span
+                  style="color:var(--secondary);font-weight:700">AI Storage</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-user-lock c-pink me-1"></i> ASP.NET Identity</span><span
+                  style="color:var(--secondary);font-weight:700">Auth</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-envelope c-ora me-1"></i> MailKit (Gmail)</span><span
+                  style="color:var(--secondary);font-weight:700">SMTP</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-robot c-sec me-1"></i> GitHub Models</span><span
+                  style="color:var(--secondary);font-weight:700">GPT-4o-mini</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:.75rem"><span><i
+                    class="fas fa-project-diagram c-pur me-1"></i> n8n Automation</span><span
+                  style="color:var(--secondary);font-weight:700">Workflows</span></div>
+            </div>
+          </div>
+          <!-- Areas structure -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">📁 Areas
+              Structure</div>
+            <div class="code-block" style="font-size:.66rem">
+              <span class="code-class">LMSProject/</span>
+              ├── <span class="code-keyword">Areas/</span>
+              │ ├── <span class="code-class">Admin/</span> Controllers · Views · VMs
+              │ ├── <span class="code-class">Instructor/</span> Controllers · Views · VMs
+              │ ├── <span class="code-class">Student/</span> Controllers · Views · VMs
+              │ ├── <span class="code-class">Parent/</span> Controllers · Views · VMs
+              │ └── <span class="code-class">SuperAdmin/</span> Controllers · Views · VMs
+              ├── <span class="code-keyword">AI/Services/</span>
+              │ ├── GithubAiService.cs
+              │ ├── AiChatService.cs
+              │ └── WeeklyReportService.cs
+              ├── <span class="code-keyword">MLSCore/</span> Models · Interfaces
+              └── <span class="code-keyword">MLSEF/</span> DbContext · Repositories
+            </div>
+          </div>
+          <!-- Pattern -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">🏗️ Design
+              Patterns</div>
+            <div style="display:flex;flex-direction:column;gap:.5rem">
+              <div class="flow-row">
+                <div class="flow-node" style="background:rgba(91,114,238,.15);border-color:rgba(91,114,238,.3)">
+                  Controller</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">Unit of Work</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="background:rgba(0,203,184,.1);border-color:rgba(0,203,184,.25)">Repository
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node">DB</div>
+              </div>
+              <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin:.3rem 0">Architecture Layers:</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.4rem">
+                <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.4rem .6rem;font-size:.7rem"><i
+                    class="fas fa-layer-group c-pur me-1"></i> Repository Pattern</div>
+                <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.4rem .6rem;font-size:.7rem"><i
+                    class="fas fa-sync c-sec me-1"></i> Unit of Work</div>
+                <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.4rem .6rem;font-size:.7rem"><i
+                    class="fas fa-exchange-alt c-blu me-1"></i> AutoMapper</div>
+                <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:.4rem .6rem;font-size:.7rem"><i
+                    class="fas fa-bolt c-ora me-1"></i> Dependency Injection</div>
+              </div>
+            </div>
+          </div>
+          <!-- Auth flow -->
+          <div class="card anim" style="grid-column:1/3">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.7rem;color:rgba(255,255,255,.6)">🔐
+              Authentication & Authorization Flow</div>
+            <div class="flow-row" style="gap:.6rem">
+              <div class="flow-node" style="background:rgba(225,52,104,.1);border-color:rgba(225,52,104,.25)"><i
+                  class="fas fa-user me-1 c-pink"></i>User Login</div>
+              <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="flow-node"><i class="fas fa-check me-1 c-sec"></i>Identity Auth</div>
+              <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="flow-node" style="background:rgba(91,114,238,.1);border-color:rgba(91,114,238,.25)"><i
+                  class="fas fa-tag me-1 c-pur"></i>Role Assigned</div>
+              <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="flow-node" style="background:rgba(0,203,184,.1);border-color:rgba(0,203,184,.25)"><i
+                  class="fas fa-door-open me-1 c-sec"></i>Dashboard Redirect</div>
+              <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+              <div class="flow-node"><i class="fas fa-shield-alt me-1 c-ora"></i>[Authorize(Roles)]</div>
+            </div>
+            <div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+              <span style="font-size:.7rem;color:rgba(255,255,255,.4)">Protected by:</span>
+              <span class="role-badge bg-pink" style="font-size:.65rem"><i
+                  class="fas fa-crown c-pink me-1"></i>SuperAdmin</span>
+              <span class="role-badge bg-ora" style="font-size:.65rem"><i
+                  class="fas fa-user-shield c-ora me-1"></i>Admin</span>
+              <span class="role-badge bg-pur" style="font-size:.65rem"><i
+                  class="fas fa-chalkboard-teacher c-pur me-1"></i>Instructor</span>
+              <span class="role-badge bg-sec" style="font-size:.65rem"><i
+                  class="fas fa-graduation-cap c-sec me-1"></i>Student</span>
+              <span class="role-badge bg-blu" style="font-size:.65rem"><i
+                  class="fas fa-user-friends c-blu me-1"></i>Parent</span>
+            </div>
+          </div>
+          <!-- DB -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.7rem;color:rgba(255,255,255,.6)">🗄️ Key DB
+              Entities</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem">
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbStudent</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbCourse</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbTest / TbQuestion</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbAssignment</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbTicket</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbParent</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbContactForm</div>
+              <div style="font-size:.68rem;padding:.25rem .5rem;background:rgba(255,255,255,.04);border-radius:6px">
+                TbAnnouncement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 4: CORE FEATURES ── -->
+    <div class="slide bg-s4" data-label="4 · Core Features">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num">04</div>
+          <div>
+            <div class="slide-title">Core LMS Features</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">Courses · Exams · Assignments · Tickets ·
+              Notifications</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 4</span></div>
+        </div>
+        <div style="flex:1;display:grid;grid-template-columns:1.2fr 1fr;gap:1rem;align-content:start">
+          <div style="display:flex;flex-direction:column;gap:.7rem">
+            <div class="g2 anim">
+              <div class="card" style="border-top:3px solid var(--secondary)">
+                <div class="card-icon bg-sec"><i class="fas fa-book-open c-sec"></i></div>
+                <div class="card-title">Course Management</div>
+                <div class="card-text">Create courses · Assign instructors · Enroll students · Upload materials
+                  (PDF/video/docs)</div>
+              </div>
+              <div class="card" style="border-top:3px solid var(--purple)">
+                <div class="card-icon bg-pur"><i class="fas fa-file-alt c-pur"></i></div>
+                <div class="card-title">Exam System</div>
+                <div class="card-text">Timed MCQ + text exams · Auto-grading · Tab-lock · Randomized questions · Instant
+                  results</div>
+              </div>
+              <div class="card" style="border-top:3px solid var(--orange)">
+                <div class="card-icon bg-ora"><i class="fas fa-tasks c-ora"></i></div>
+                <div class="card-title">Assignments</div>
+                <div class="card-text">File & text submissions · Late tracking · Instructor grading · Score & feedback
+                </div>
+              </div>
+              <div class="card" style="border-top:3px solid var(--blue)">
+                <div class="card-icon bg-blu"><i class="fas fa-bell c-blu"></i></div>
+                <div class="card-title">Notifications</div>
+                <div class="card-text">Real-time bell · Role-aware · Unread badges · Sidebar counters per section</div>
+              </div>
+            </div>
+            <div class="card anim" style="border-left:3px solid var(--pink)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">🎫 Ticketing
+                System</div>
+              <div class="flow-row">
+                <div class="flow-node" style="background:rgba(0,203,184,.1)"><i class="fas fa-user c-sec me-1"></i>User
+                  creates ticket</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node"><i class="fas fa-user-shield c-ora me-1"></i>Admin reviews</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="background:rgba(225,52,104,.1)"><i
+                    class="fas fa-forward c-pink me-1"></i>Escalate to SA</div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-node" style="background:rgba(91,114,238,.1)"><i
+                    class="fas fa-check c-pur me-1"></i>Resolved</div>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.7rem">
+            <!-- Exam flow -->
+            <div class="card anim">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.7rem;color:rgba(255,255,255,.6)">📝 Student
+                Exam Flow</div>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                  <div class="tl-title" style="font-size:.75rem">Access exam from dashboard</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--purple);border-color:var(--purple)"></div>
+                  <div class="tl-title" style="font-size:.75rem">Timer starts — tab lock enabled</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--blue);border-color:var(--blue)"></div>
+                  <div class="tl-title" style="font-size:.75rem">Answer MCQ + text questions</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--orange);border-color:var(--orange)"></div>
+                  <div class="tl-title" style="font-size:.75rem">Confirm submit (modal)</div>
+                </div>
+                <div class="tl-item" style="margin:0">
+                  <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                  <div class="tl-title" style="font-size:.75rem">Auto-graded · Result shown instantly</div>
+                </div>
+              </div>
+            </div>
+            <!-- Stats -->
+            <div class="card anim">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.7rem;color:rgba(255,255,255,.6)">📊 Platform
+                Statistics</div>
+              <div class="g2" style="gap:.5rem">
+                <div class="stat-card">
+                  <div class="stat-num c-sec">5</div>
+                  <div class="stat-lbl">Dashboards</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num c-pur">30+</div>
+                  <div class="stat-lbl">Features</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num c-blu">15+</div>
+                  <div class="stat-lbl">DB Tables</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-num c-ora">100%</div>
+                  <div class="stat-lbl">Role Protected</div>
+                </div>
+              </div>
+            </div>
+            <!-- Parent monitoring -->
+            <div class="card anim" style="border-left:3px solid var(--blue)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.5rem;color:rgba(255,255,255,.6)">👨‍👩‍👧
+                Parent Monitoring</div>
+              <div style="font-size:.73rem;color:rgba(255,255,255,.5);line-height:1.7">
+                <i class="fas fa-check c-sec me-1"></i>View children's scores & grades<br>
+                <i class="fas fa-check c-sec me-1"></i>Track assignment submission status<br>
+                <i class="fas fa-check c-sec me-1"></i>See upcoming deadlines<br>
+                <i class="fas fa-check c-sec me-1"></i>Weekly AI-analyzed email report<br>
+                <i class="fas fa-check c-sec me-1"></i>Submit support tickets
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 5: AI FEATURES ── -->
+    <div class="slide bg-s5" data-label="5 · AI Features">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num">05</div>
+          <div>
+            <div class="slide-title">AI Features & Automations</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">GPT-4o-mini · n8n · Mistral · MongoDB</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 5</span></div>
+        </div>
+        <div class="g3" style="flex:1;align-content:start;gap:.8rem">
+          <div class="card anim" style="border-top:3px solid var(--secondary)">
+            <div class="card-icon bg-sec"><i class="fas fa-robot c-sec"></i></div>
+            <div class="card-title">AI Study Planner</div>
+            <div class="card-text">Fetches student's real enrolled courses, upcoming exams & pending assignments from
+              DB. GPT-4o-mini generates a personalized 7-day plan. Never invents subjects.</div>
+            <div style="margin-top:.6rem;font-size:.68rem;color:var(--secondary)">GitHub Models API · No file needed
+            </div>
+          </div>
+          <div class="card anim" style="border-top:3px solid var(--purple)">
+            <div class="card-icon bg-pur"><i class="fas fa-magic c-pur"></i></div>
+            <div class="card-title">AI Exam Generator</div>
+            <div class="card-text">Instructor uploads PDF/DOCX → n8n extracts text → Mistral AI generates MCQ +
+              True/False questions with correct answers formatted cleanly.</div>
+            <div style="margin-top:.6rem;font-size:.68rem;color:var(--purple)">n8n · Mistral Cloud · multipart/form-data
+            </div>
+          </div>
+          <div class="card anim" style="border-top:3px solid var(--blue)">
+            <div class="card-icon bg-blu"><i class="fas fa-comments c-blu"></i></div>
+            <div class="card-title">AI Chatbot (RAG)</div>
+            <div class="card-text">Student uploads study material → file sent to n8n webhook → Mistral AI answers
+              questions based ONLY on the uploaded document context.</div>
+            <div style="margin-top:.6rem;font-size:.68rem;color:var(--blue)">n8n · Extract from File · Per-request</div>
+          </div>
+          <!-- AI Architecture -->
+          <div class="card anim" style="grid-column:1/3">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.8rem;color:rgba(255,255,255,.6)">🏗️ AI
+              Architecture</div>
+            <div style="display:flex;flex-direction:column;gap:.6rem">
+              <div>
+                <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:.3rem">Text-only features (Study
+                  Planner, Parent Reports):</div>
+                <div class="flow-row">
+                  <div class="flow-node" style="background:rgba(0,203,184,.1)">LMS Controller</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node">GithubAiService</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node" style="background:rgba(91,114,238,.15)">GPT-4o-mini API</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node" style="background:rgba(0,203,184,.1)">Response → View</div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:.3rem">File-based features
+                  (Chatbot, Exam Generator):</div>
+                <div class="flow-row">
+                  <div class="flow-node" style="background:rgba(225,52,104,.1)">Browser (file)</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node">AiProxyController</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node" style="background:rgba(244,140,6,.1)">n8n Webhook</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node">Extract PDF</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node" style="background:rgba(91,114,238,.15)">Mistral AI</div>
+                  <div class="flow-arrow">→</div>
+                  <div class="flow-node" style="background:rgba(0,203,184,.1)">Response</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- n8n + Parent report -->
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">⚙️ n8n
+              Automation</div>
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--orange);border-color:var(--orange)"></div>
+                <div class="tl-title" style="font-size:.73rem">Schedule — Every Friday 8AM</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                <div class="tl-title" style="font-size:.73rem">Trigger LMS → Send Reports</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot" style="background:var(--purple);border-color:var(--purple)"></div>
+                <div class="tl-title" style="font-size:.73rem">AI Analysis per Child</div>
+              </div>
+              <div class="tl-item" style="margin:0">
+                <div class="tl-dot" style="background:var(--blue);border-color:var(--blue)"></div>
+                <div class="tl-title" style="font-size:.73rem">Styled HTML Email → Parent</div>
+              </div>
+            </div>
+          </div>
+          <div class="card anim">
+            <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">📊 AI Parent
+              Report</div>
+            <div style="font-size:.73rem;color:rgba(255,255,255,.5);line-height:1.8">
+              <i class="fas fa-check c-sec me-1"></i>Fetches real DB data (scores, assignments)<br>
+              <i class="fas fa-check c-sec me-1"></i>Compares submitted vs published work<br>
+              <i class="fas fa-check c-sec me-1"></i>AI writes plain-language summary<br>
+              <i class="fas fa-check c-sec me-1"></i>Never flags issues if no work published<br>
+              <i class="fas fa-check c-sec me-1"></i>Warm, supportive tone for parents
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 6: LIVE DEMO ── -->
+    <div class="slide" style="background:linear-gradient(160deg,#0d0f2b,#0a1a0f)" data-label="6 · Live Demo">
+      <div class="slide-inner">
+        <div class="slide-header anim">
+          <div class="slide-num"
+            style="background:linear-gradient(135deg,var(--orange),var(--yellow));-webkit-background-clip:text;-webkit-text-fill-color:transparent">
+            06</div>
+          <div>
+            <div class="slide-title">Live Demo & Testing</div>
+            <div style="font-size:.78rem;color:rgba(255,255,255,.4)">Authentication · Workflows · AI · Real-time</div>
+          </div>
+          <div class="presenter-chip">Presenter: <span>Team Member 6</span></div>
+        </div>
+        <div class="g2" style="flex:1;align-content:start;gap:1rem">
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div class="card anim" style="border-left:3px solid var(--secondary)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">🔐 Demo
+                Sequence</div>
+              <div class="timeline">
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                  <div class="tl-title" style="font-size:.75rem">1. Login as SuperAdmin → user management</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--orange);border-color:var(--orange)"></div>
+                  <div class="tl-title" style="font-size:.75rem">2. Login as Admin → course · announcements</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--purple);border-color:var(--purple)"></div>
+                  <div class="tl-title" style="font-size:.75rem">3. Login as Instructor → AI exam generator</div>
+                </div>
+                <div class="tl-item">
+                  <div class="tl-dot" style="background:var(--blue);border-color:var(--blue)"></div>
+                  <div class="tl-title" style="font-size:.75rem">4. Login as Student → take exam + AI planner</div>
+                </div>
+                <div class="tl-item" style="margin:0">
+                  <div class="tl-dot" style="background:var(--secondary);border-color:var(--secondary)"></div>
+                  <div class="tl-title" style="font-size:.75rem">5. Login as Parent → view child's report</div>
+                </div>
+              </div>
+            </div>
+            <div class="card anim" style="border-left:3px solid var(--orange)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">🤖 AI Demo
+                Points</div>
+              <div style="font-size:.73rem;color:rgba(255,255,255,.5);line-height:1.9">
+                <i class="fas fa-circle c-ora me-1" style="font-size:.5rem"></i> Study Planner — show personalized plan
+                from DB<br>
+                <i class="fas fa-circle c-ora me-1" style="font-size:.5rem"></i> Exam Generator — upload PDF → get
+                questions<br>
+                <i class="fas fa-circle c-ora me-1" style="font-size:.5rem"></i> Parent Report — AI narrative
+                analysis<br>
+                <i class="fas fa-circle c-ora me-1" style="font-size:.5rem"></i> Forgot Password — email with temp
+                password
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <div class="card anim" style="border-left:3px solid var(--purple)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.6rem;color:rgba(255,255,255,.6)">✅ What to
+                Show</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.35rem">
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Role-based login</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Exam taking</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Assignment submit</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> AI study planner</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Notification bell</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Ticket system</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Parent report</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Contact form → SA</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Arabic / English</div>
+                <div style="font-size:.7rem;display:flex;gap:.3rem;align-items:center"><i
+                    class="fas fa-check-circle c-sec"></i> Email sending</div>
+              </div>
+            </div>
+            <div class="card anim" style="background:rgba(0,203,184,.06);border:1px solid rgba(0,203,184,.2)">
+              <div style="font-size:.78rem;font-weight:700;margin-bottom:.5rem;color:var(--secondary)">⚡ Quick Access
+                Credentials</div>
+              <div class="code-block" style="font-size:.68rem">
+                <span class="code-comment">// SuperAdmin</span>
+                Email: <span class="code-string">superadmin@totc.com</span>
+
+                <span class="code-comment">// Admin</span>
+                Email: <span class="code-string">admin@totc.com</span>
+
+                <span class="code-comment">// Instructor</span>
+                Email: <span class="code-string">instructor@totc.com</span>
+
+                <span class="code-comment">// Student</span>
+                Email: <span class="code-string">student@totc.com</span>
+
+                <span class="code-comment">// Parent</span>
+                Email: <span class="code-string">parent@totc.com</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── SLIDE 7: CLOSING ── -->
+    <div class="slide s-cover" data-label="Thank You">
+      <div class="orb" style="width:500px;height:500px;background:rgba(0,203,184,.07);top:-15%;left:-10%"></div>
+      <div class="orb" style="width:350px;height:350px;background:rgba(225,52,104,.06);bottom:-5%;right:-5%"></div>
+      <div
+        style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:3rem">
+        <div class="cover-badge anim"><i class="fas fa-heart" style="color:var(--pink)"></i> Built with passion</div>
+        <div class="cover-title anim" style="font-size:clamp(2rem,4vw,3.5rem)">Thank You <span>🎓</span></div>
+        <div class="cover-sub anim" style="max-width:600px;margin:1rem auto">TOTC LMS — A complete, AI-powered learning
+          management system built as a graduation project for DEPI 2025</div>
+
+        <div class="g4 anim" style="margin:2rem 0;gap:.75rem;max-width:700px">
+          <div class="stat-card">
+            <div class="stat-num c-sec">5</div>
+            <div class="stat-lbl">Roles</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num c-pur">30+</div>
+            <div class="stat-lbl">Features</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num c-blu">5</div>
+            <div class="stat-lbl">AI Tools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num c-ora">n8n</div>
+            <div class="stat-lbl">Automation</div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;max-width:700px;margin-bottom:2rem"
+          class="anim">
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">ASP.NET
+            Core MVC .NET 10</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">Entity
+            Framework Core</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">SQL
+            Server + MongoDB</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">GitHub
+            Models GPT-4o-mini</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">n8n
+            + Mistral AI</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">Bootstrap
+            5 + Poppins</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">MailKit
+            + Gmail SMTP</span>
+          <span
+            style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:.3rem .8rem;font-size:.72rem">Repository
+            + Unit of Work</span>
+        </div>
+        <div class="anim" style="color:rgba(255,255,255,.3);font-size:.78rem">
+          <i class="fab fa-github me-2"></i>github.com/nawal-ali/DEPI_GP_LMS
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /slides -->
+
+  <script>
+    var slides = document.querySelectorAll('.slide');
+    var dotsEl = document.getElementById('dots');
+    var counterEl = document.getElementById('slideCounter');
+    var labelEl = document.getElementById('slideLabel');
+    var current = 0;
+    var labels = Array.from(slides).map(s => s.dataset.label || '');
+
+    // Build dots
+    slides.forEach(function (_, i) {
+      var d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.onclick = function () { goTo(i); };
+      dotsEl.appendChild(d);
+    });
+
+    function updateDots() {
+      document.querySelectorAll('.dot').forEach(function (d, i) {
+        d.classList.toggle('active', i === current);
+      });
+      counterEl.textContent = (current + 1) + ' / ' + slides.length;
+      labelEl.textContent = labels[current];
+    }
+
+    function goTo(n) {
+      if (n < 0 || n >= slides.length || n === current) return;
+      var dir = n > current ? 'exit-up' : 'exit-down';
+      slides[current].classList.add(dir);
+      slides[current].classList.remove('active');
+      setTimeout(function () { slides[current - dir === 'exit-up' ? 0 : -1]; }, 600);
+      // Clean up
+      var prev = current;
+      setTimeout(function () { slides[prev].classList.remove('exit-up', 'exit-down'); }, 700);
+      current = n;
+      slides[current].classList.add('active');
+
+      // Trigger progress bars
+      setTimeout(function () {
+        slides[current].querySelectorAll('.prog-bar').forEach(function (b) {
+          var w = b.style.width; b.style.width = '0';
+          requestAnimationFrame(function () { b.style.width = w; });
+        });
+      }, 300);
+      updateDots();
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next();
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') prev();
+    });
+
+    // Touch swipe
+    var sx = 0, sy = 0;
+    document.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; });
+    document.addEventListener('touchend', function (e) {
+      var dx = sx - e.changedTouches[0].clientX, dy = sy - e.changedTouches[0].clientY;
+      if (Math.abs(dx) > Math.abs(dy)) { if (dx > 50) next(); else if (dx < -50) prev(); }
+    });
+
+    updateDots();
+  </script>
+</body>
+
+</html>
