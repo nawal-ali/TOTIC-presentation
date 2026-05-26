@@ -552,10 +552,12 @@ body {
   .g4  { grid-template-columns: 1fr 1fr; }
   .g31, .g21 { grid-template-columns: 1fr; }
   .slide-num  { font-size: 1.8rem; }
+  .slide-header { gap: .6rem; }
   .cover-title { font-size: 2rem; }
   .cover-stats { gap: 1.5rem; }
   .flow-row    { gap: .3rem; }
   .flow-node   { font-size: .65rem; padding: .25rem .55rem; }
+  .code-block  { font-size: .65rem; }
   #pres-nav    { padding: .4rem .9rem; gap: .6rem; }
   .dot         { width: 6px; height: 6px; }
   .dot.active  { width: 16px; }
@@ -565,6 +567,19 @@ body {
   .g4 { grid-template-columns: 1fr 1fr; }
   .presenter-chip { display: none; }
   #key-hint { display: none; }
+  .slide-num  { font-size: 1.5rem; }
+  .slide-title { font-size: 1rem; }
+  .cover-title { font-size: 1.7rem; }
+  .cover-stats { gap: 1rem; }
+  .cstat-num   { font-size: 1.5rem; }
+  .flow-row    { flex-wrap: wrap; }
+  .flow-node   { font-size: .62rem; }
+  .card        { padding: .75rem .85rem; }
+  .card-title  { font-size: .8rem; }
+  .card-text   { font-size: .68rem; }
+  #pres-nav    { padding: .35rem .7rem; gap: .45rem; bottom: .8rem; }
+  .pnav-btn    { padding: .25rem .4rem; font-size: .9rem; }
+  #slide-counter { font-size: .65rem; min-width: 34px; }
 }
 
 /* projector-friendly high-contrast mode */
@@ -641,17 +656,55 @@ body {
 .slide-inner { padding-top: 1rem; }
 .cover-content { padding-top: 4rem; }
 
-/* Hint & slide-label: move down */
-#slide-label { top: 68px; }
-#key-hint    { top: 68px; }
+/* Hint & slide-label: move down below the 100px logo bar */
+#slide-label { top: 108px; }
+#key-hint    { top: 108px; }
 
 /* ── Responsive logo bar ── */
 @media (max-width: 640px) {
-  #logo-bar { height: 100px; padding: 1rem; }
+  #logo-bar      { height: 64px; padding: 0 1rem; }
   .logo-ministry { height: 26px; }
   .logo-depi     { height: 30px; }
   .logo-totc     { height: 22px; }
   .logo-divider  { height: 22px; }
-  #slide-label   { top: 58px; }
-  #key-hint      { top: 58px; }
+  /* Labels sit just below the 64px bar */
+  #slide-label   { top: 72px; }
+  #key-hint      { top: 72px; }
+  /* Reduce top spacing to match smaller bar */
+  .slide-header  { margin-top: 4.5rem; }
+  .cover-badge   { margin-top: 4.5rem; }
+  .cover-content { padding-top: 0; }
+}
+/* ── Extra small screens (360px and below) ── */
+@media (max-width: 360px) {
+  html { font-size: 13px; }
+  .slide-inner { padding: .75rem .9rem 4.5rem; }
+  .slide-num   { font-size: 1.3rem; }
+  .cover-title { font-size: 1.5rem; }
+  .cover-sub   { font-size: .8rem; }
+  .team-pill   { font-size: .65rem; padding: .3rem .65rem; }
+  .g4          { grid-template-columns: 1fr 1fr; }
+  .stat-num    { font-size: 1.4rem; }
+  #pres-nav    { gap: .3rem; padding: .3rem .6rem; }
+}
+
+/* ── Prevent text overflow in flex/grid children ── */
+.slide-title-wrap, .card-title, .card-text, .tl-title, .tl-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Flow row — wrap gracefully on narrow screens ── */
+@media (max-width: 600px) {
+  .flow-row {
+    gap: .25rem;
+    row-gap: .35rem;
+  }
+  .flow-node {
+    flex-shrink: 1;
+    min-width: 0;
+    white-space: normal;
+    word-break: break-word;
+  }
 }
